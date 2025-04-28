@@ -1,0 +1,54 @@
+{
+    "log": [
+        {
+            "comment": "Hindi song kish kish ko pasand yaar",
+            "status": "SAFE",
+            "bad_words_detected": []
+        },
+        {
+            "comment": "Itna sukoon hai is gane me ki kya batau ",
+            "status": "SAFE",
+            "bad_words_detected": []
+        },
+        {
+            "comment": "Happy holi ",
+            "status": "SAFE",
+            "bad_words_detected": []
+        },
+        {
+            "comment": "March 25 kaun kaun Sun raha hai ",
+            "status": "SAFE",
+            "bad_words_detected": []
+        },
+        {
+            "comment": "Ha thik hai dil ki bat chin li bhai ye song ne mujhe rula diya aaj bahut hi mast song hai mujhe bahut bahut jyada heart kiya hai is ladki ne ab ja ke sookun mila i promise old is gold",
+            "status": "SAFE",
+            "bad_words_detected": []
+        },
+        {
+            "comment": "कौन-कौन 2025 में मार्च महीना में सुन रहा है",
+            "status": "SAFE",
+            "bad_words_detected": []
+        },
+        {
+            "comment": "2025 me sun Raha hu",
+            "status": "SAFE",
+            "bad_words_detected": []
+        },
+        {
+            "comment": "Ye gana mere dil ko choo gya ",
+            "status": "SAFE",
+            "bad_words_detected": []
+        },
+        {
+            "comment": "New gane dikhao",
+            "status": "SAFE",
+            "bad_words_detected": []
+        },
+        {
+            "comment": "2025 mein kiska kiska breakup hua hai ",
+            "status": "SAFE",
+            "bad_words_detected": []
+        }
+    ]
+}
