@@ -1,0 +1,10 @@
+{
+    "dangerous_comments": [
+        {
+            "comment": "stupid ",
+            "bad_words_detected": [
+                "stupid"
+            ]
+        }
+    ]
+}

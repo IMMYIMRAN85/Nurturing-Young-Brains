@@ -11,6 +11,13 @@
             "bad_words_detected": []
         },
         {
+            "comment": "stupid ",
+            "status": "DANGEROUS",
+            "bad_words_detected": [
+                "stupid"
+            ]
+        },
+        {
             "comment": "Happy holi ",
             "status": "SAFE",
             "bad_words_detected": []
