@@ -1,4 +1,5 @@
 import json
+import re  # <-- Regular Expressions module for smarter matching
 
 # List of simple bad words (you can expand this later)
 bad_words = ["bad", "stupid", "hate", "violence", "idiot", "kill", "hurt"]
@@ -20,14 +21,19 @@ def load_comments():
 def check_comments(comments):
     for idx, comment in enumerate(comments, start=1):
         comment_lower = comment.lower()
-        found_bad_words = [word for word in bad_words if word in comment_lower]
+        found_bad_words = []
+
+        for word in bad_words:
+            # Match full words only (e.g., 'hate' but not inside 'whatever')
+            pattern = r'\b' + re.escape(word) + r'\b'
+            if re.search(pattern, comment_lower):
+                found_bad_words.append(word)
         
         if found_bad_words:
             print(f"[DANGEROUS] Comment {idx}: {comment}")
             print(f"    🔥 Bad words detected: {found_bad_words}")
         else:
             print(f"[SAFE] Comment {idx}: {comment}")
-
 # Main logic
 if __name__ == "__main__":
     comments = load_comments()
