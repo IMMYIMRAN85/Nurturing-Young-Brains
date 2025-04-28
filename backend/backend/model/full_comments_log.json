@@ -1,61 +1,64 @@
 {
     "log": [
         {
-            "comment": "Hindi song kish kish ko pasand yaar",
+            "comment": "I love this song ️️Nd this line \nकरीब आओ तुम्हारी\nतन्हाईया चुरा लूँ\nधड़कते दिल से तुम्हारी\nबेताबियाँ चुरा लूँ\nतुम्हारी आँखों मैं सात\nरंग के ख्वाब राख दू\nतुम्हारे होठों पे\nचाहतो के गुलाब राख दू.... ",
             "status": "SAFE",
-            "bad_words_detected": []
+            "model_prediction": "POSITIVE",
+            "confidence": 0.9954155683517456
         },
         {
-            "comment": "Itna sukoon hai is gane me ki kya batau ",
+            "comment": "I'm now 27 years old living far from my family as a tenant in DUBAI and having \"After Dark\" whiskey listening this master piece of my childhood. This song throw me back to those Golden days of my childhood.",
             "status": "SAFE",
-            "bad_words_detected": []
+            "model_prediction": "POSITIVE",
+            "confidence": 0.998399555683136
         },
         {
-            "comment": "stupid ",
+            "comment": "दूसरा मौका सिर्फ कहानियां देती हैं, \nज़िन्दगी नहीं..!!Heart touching song ",
+            "status": "SAFE",
+            "model_prediction": "POSITIVE",
+            "confidence": 0.9987950325012207
+        },
+        {
+            "comment": "जब से यह गीत बनाया गया है, तब से कितने बार सुना और देखा है कि गिनती भूल गया हूँ । हर बार नया लगता है ।",
             "status": "DANGEROUS",
-            "bad_words_detected": [
-                "stupid"
-            ]
+            "model_prediction": "NEGATIVE",
+            "confidence": 0.9137477278709412
         },
         {
-            "comment": "Happy holi ",
-            "status": "SAFE",
-            "bad_words_detected": []
+            "comment": "Till this date not a single actor has  been able to substitute John. Hats off to such an underrated actor.",
+            "status": "DANGEROUS",
+            "model_prediction": "NEGATIVE",
+            "confidence": 0.9757691025733948
         },
         {
-            "comment": "March 25 kaun kaun Sun raha hai ",
+            "comment": "2004 main ayi thi ye movie but aj bhi ye gaana Dil ko choo leta hai I love this song ️️️️️ A masterpiece created by Roop Kumar Rathod Udit Narayan and Sadhna Sargam",
             "status": "SAFE",
-            "bad_words_detected": []
+            "model_prediction": "POSITIVE",
+            "confidence": 0.9992795586585999
         },
         {
-            "comment": "Ha thik hai dil ki bat chin li bhai ye song ne mujhe rula diya aaj bahut hi mast song hai mujhe bahut bahut jyada heart kiya hai is ladki ne ab ja ke sookun mila i promise old is gold",
-            "status": "SAFE",
-            "bad_words_detected": []
+            "comment": "यह सिर्फ एक गाना नहीं पूरा का पूरा दिल निकल कर रख दिया है। जितनी बार भी सुनो कम ही लगता है ",
+            "status": "DANGEROUS",
+            "model_prediction": "NEGATIVE",
+            "confidence": 0.7831396460533142
         },
         {
-            "comment": "कौन-कौन 2025 में मार्च महीना में सुन रहा है",
-            "status": "SAFE",
-            "bad_words_detected": []
+            "comment": "बना लो अपना कि दूर तुम से ना रह सकेंगे...,\nअब एक पल भी ग़म-ए-जुदाई ना सह सकेंगे...,\nनिगाहें प्यासी हैं, मुद्दतों की ख़ुमार दे दो...,\nगले लगा के हमें वो पहला सा प्यार दे दो....",
+            "status": "DANGEROUS",
+            "model_prediction": "NEGATIVE",
+            "confidence": 0.915701150894165
         },
         {
-            "comment": "2025 me sun Raha hu",
+            "comment": "2021",
             "status": "SAFE",
-            "bad_words_detected": []
+            "model_prediction": "POSITIVE",
+            "confidence": 0.9965541362762451
         },
         {
-            "comment": "Ye gana mere dil ko choo gya ",
+            "comment": "To me bipasha is one of the best beauties bollywood ever had...dusky,dimples,her eyes talk,best body & the sensuality she attain...she’s outta this world...️",
             "status": "SAFE",
-            "bad_words_detected": []
-        },
-        {
-            "comment": "New gane dikhao",
-            "status": "SAFE",
-            "bad_words_detected": []
-        },
-        {
-            "comment": "2025 mein kiska kiska breakup hua hai ",
-            "status": "SAFE",
-            "bad_words_detected": []
+            "model_prediction": "POSITIVE",
+            "confidence": 0.9997718930244446
         }
     ]
 }

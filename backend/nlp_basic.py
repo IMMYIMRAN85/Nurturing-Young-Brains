@@ -3,6 +3,10 @@ import re
 import datetime
 from flask import Flask
 from flask_mail import Mail, Message
+from transformers import pipeline
+
+# Load sentiment-analysis pipeline (pretrained)
+nlp_model = pipeline("sentiment-analysis")
 
 # List of simple bad words
 bad_words = ["bad", "stupid", "hate", "violence", "idiot", "kill", "hurt"]
@@ -98,37 +102,43 @@ def check_comments(comments):
     all_comments_log = []
 
     for idx, comment in enumerate(comments, start=1):
-        comment_lower = comment.lower()
-        found_bad_words = []
+        try:
+            # Use the BERT model to predict sentiment
+            result = nlp_model(comment)[0]
+            label = result['label']  # Either 'POSITIVE' or 'NEGATIVE'
+            score = result['score']  # Confidence score
 
-        for word in bad_words:
-            pattern = r'\b' + re.escape(word) + r'\b'
-            if re.search(pattern, comment_lower):
-                found_bad_words.append(word)
+            if label == 'NEGATIVE':
+                # Dangerous Comment Detected
+                print(f"[DANGEROUS] Comment {idx}: {comment}")
+                print(f"    🔥 Model Prediction: {label} (Confidence: {score:.2f})")
+                dangerous_comments.append({
+                    "comment": comment,
+                    "model_prediction": label,
+                    "confidence": float(score)
+                })
+                all_comments_log.append({
+                    "comment": comment,
+                    "status": "DANGEROUS",
+                    "model_prediction": label,
+                    "confidence": float(score)
+                })
+                # Send alert email
+                send_alert_email(comment, label)
+            else:
+                # Safe Comment
+                print(f"[SAFE] Comment {idx}: {comment}")
+                print(f"    ✅ Model Prediction: {label} (Confidence: {score:.2f})")
+                all_comments_log.append({
+                    "comment": comment,
+                    "status": "SAFE",
+                    "model_prediction": label,
+                    "confidence": float(score)
+                })
+        except Exception as e:
+            print(f"Error analyzing comment {idx}: {e}")
 
-        if found_bad_words:
-            print(f"[DANGEROUS] Comment {idx}: {comment}")
-            print(f"    🔥 Bad words detected: {found_bad_words}")
-            dangerous_comments.append({
-                "comment": comment,
-                "bad_words_detected": found_bad_words
-            })
-            all_comments_log.append({
-                "comment": comment,
-                "status": "DANGEROUS",
-                "bad_words_detected": found_bad_words
-            })
-            # Send an alert email immediately
-            send_alert_email(comment, found_bad_words)
-        else:
-            print(f"[SAFE] Comment {idx}: {comment}")
-            all_comments_log.append({
-                "comment": comment,
-                "status": "SAFE",
-                "bad_words_detected": []
-            })
-
-    # Save dangerous comments if found
+    # Save dangerous comments if any
     if dangerous_comments:
         try:
             with open(DANGEROUS_FILE, 'w', encoding='utf-8') as f:
@@ -140,6 +150,7 @@ def check_comments(comments):
     # Save full log and summary
     save_full_log(all_comments_log)
     save_summary(len(dangerous_comments))
+
 
 # Main execution
 if __name__ == "__main__":
