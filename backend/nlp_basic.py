@@ -6,6 +6,7 @@ bad_words = ["bad", "stupid", "hate", "violence", "idiot", "kill", "hurt"]
 
 # Path to the comments.json file
 COMMENTS_FILE = 'backend/model/comments.json'
+DANGEROUS_FILE = 'backend/model/dangerous_comments.json'  # <-- add this here
 
 # Function to load comments
 def load_comments():
